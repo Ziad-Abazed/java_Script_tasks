@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #2: Changing box color on click</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+          
+        }
+    </style>
+   
+</head>
+<body>
+<div id="mydiv"></div>
+
+
+<script>
+    const btn = document.getElementById('mydiv');
+
+btn.addEventListener('click', function onClick(event) {
+
+var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+ 
+  console.log(color);
+
+event.target.style.backgroundColor = color;})
+  </script>
+</body>
+</html>
