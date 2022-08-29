@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+
+    <style>
+        body {
+            width: 98%;
+            height: 700px;
+            background-color: #A8BF7E;
+            font-size: xx-large;
+
+        }
+
+        .container-grid {
+            padding: 15px;
+            width: 30%;
+            height: 70vh;
+            background-color: #A0D0EA;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 15px;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .container-grid div {
+            display: flex;
+            box-shadow: 0 8px 2px -2px gray;
+      
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .result {
+            background-color: #EFEFEF;
+
+            grid-column: 1 /5;
+            display: block;
+
+        }
+        #res{
+           
+            position:absolute;
+            background-color: #EFEFEF;
+            width: 27%;
+            height: 50px;
+        }
+        .clear{
+            background-color: #FCA0AA;
+        }
+        .Operation{
+            background-color: #EFFF93;
+        }
+        .num{
+            background-color: #EFEFEF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-grid">
+        <div class="result">
+            <input type="text" id="res" placeholder="result">
+        </div>
+        <div class="num" onclick="one()">1 </div>
+        <div class="num" onclick="two()">2</div>
+        <div class="num" onclick="three()">3</div>
+        <div class="Operation" onclick="sum()">+</div>
+        <div class="num" onclick="four()">4</div>
+        <div class="num" onclick="five()">5</div>
+        <div class="num" onclick="six()">6</div>
+        <div class="Operation" onclick="sub()">-</div>
+        <div class="num" onclick="seven()">7</div>
+        <div class="num" onclick="eight()">8</div>
+        <div class="num" onclick="nine()">9</div>
+        <div class="Operation" onclick="multi()">*</div>
+        <div class="clear" onclick="c()">C</div>
+        <div class="num" onclick="zero()">0</div>
+        <div class="num"onclick="equal()">=</div>
+        <div class="Operation" onclick="divi()">÷</div>
+    </div>
+</body>
+<script>
+    result=document.getElementById("res");
+
+   function one(){ result.value+=1; }
+
+    function two(){result.value+=2;}
+
+function three(){result.value+=3;}
+
+function four(){result.value+=4;}
+
+function five(){result.value+=5;}
+
+function six(){result.value+=6;}
+
+function seven(){result.value+=7;}
+
+function eight(){result.value+=8;}
+
+function nine(){result.value+=9;}
+
+function zero(){result.value+=0;}
+
+function sum(){result.value+='+';}
+
+function sub(){result.value+='-';}
+
+function multi(){result.value+='*';}
+
+function divi(){result.value+='/';}
+
+function c(){result.value='';}
+
+function equal(){
+num=eval(result.value);
+document.getElementById("res").value=num;
+}
+
+</script>
+
+</html>
